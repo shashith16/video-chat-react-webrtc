@@ -28,5 +28,9 @@ io.on("connection", (socket) => {
     io.to(data.to).emit("callAccepted", data.signal);
   });
 });
+const port = process.env.PORT || 5000;
+server.listen(port, "0.0.0.0", function () {
+  console.log("Listening on Port 5000");
+});
 
-server.listen(5000, () => console.log("server is running on port 5000"));
+//server.listen(5000, () => console.log("server is running on port 5000"));
